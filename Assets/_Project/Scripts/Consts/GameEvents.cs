@@ -2,11 +2,9 @@
 public enum GameEvents
 {
     None = 0,
-    GameStart = 1,
-    GameEnd = 2,
-    Win = 3,
-    Lose = 4,
-    Pause = 5,
-    Resume = 6,
-    Currency = 7
+    Start = 1,
+    End = 2,
+    Resume = 3,
+    Pause = 4,
+    Currency = 5
 }

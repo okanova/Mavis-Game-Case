@@ -12,9 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4304862fffa97d4f9d3e9be85da0b4a, type: 3}
   m_Name: ObjectPoolSettings
   m_EditorClassIdentifier: 
-  poolObjects:
-  - typeName: deneme
-    prefab: {fileID: 3546419952250905921, guid: 8cd5c03ab619d9941ac76d05f13b1d39, type: 3}
-    initialSize: 3
-    maxSize: 5
-    expandable: 0
+  poolObjects: []
