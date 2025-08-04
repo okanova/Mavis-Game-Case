@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-[CreateAssetMenu(fileName = "AudioSettings", menuName = "ScriptableObjects/Audio Settings")]
+[CreateAssetMenu(fileName = "AudioSettings", menuName = "BaseSettings/Audio Settings")]
 public class AudioSettings : ScriptableObject
 {
     [Serializable]

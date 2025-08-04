@@ -15,6 +15,7 @@ MonoBehaviour:
   eventNames:
   - Start
   - End
+  - Play
   - Resume
   - Pause
   - Currency

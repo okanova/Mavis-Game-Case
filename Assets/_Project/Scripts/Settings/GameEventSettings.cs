@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-[CreateAssetMenu(fileName = "GameEventSettings", menuName = "ScriptableObjects/Game Event Settings")]
+[CreateAssetMenu(fileName = "GameEventSettings", menuName = "BaseSettings/Game Event Settings")]
 public class GameEventSettings : ScriptableObject
 {
     public List<string> eventNames = new List<string>();

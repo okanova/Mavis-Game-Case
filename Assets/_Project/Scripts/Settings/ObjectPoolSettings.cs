@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-[CreateAssetMenu(fileName = "ObjectPoolSettings", menuName = "ScriptableObjects/Object Pool Settings")]
+[CreateAssetMenu(fileName = "ObjectPoolSettings", menuName = "BaseSettings/Object Pool Settings")]
 public class ObjectPoolSettings : ScriptableObject
 {
     [System.Serializable]

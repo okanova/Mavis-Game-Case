@@ -6,17 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="867cf1c9-9a83-4018-bc17-19da8972c51c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Mavis Game Case/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mavis Game Case/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Resources/GameEventSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Resources/GameEventSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Resources/ObjectPoolSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Resources/ObjectPoolSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Consts/GameEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Consts/GameEvents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Consts/PoolObjectType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Consts/PoolObjectType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Addressables.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Games/Runner/Scripts/Controller/RunnerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Games/Runner/Scripts/Controller/RunnerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/Match3D.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Match3D.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/Runner.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Runner.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/SceneLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/SceneLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Settings/AudioSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Settings/AudioSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Settings/GameEventSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Settings/GameEventSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Settings/ObjectPoolSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Settings/ObjectPoolSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Buttons/BaseButtonView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Buttons/BaseButtonView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Buttons/GameSelectButtonView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Buttons/GameSelectButtonView.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +41,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Consts/PoolObjectType.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Consts/Scene.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Core/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Core/PrefabManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Core/SaveManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Editor/AudioSettingsEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Events/BoolArgs.cs" root0="FORCE_HIGHLIGHTING" />
@@ -129,7 +131,7 @@
       <option name="presentableId" value="Default" />
       <updated>1754298037916</updated>
       <workItem from="1754298040699" duration="10000" />
-      <workItem from="1754298058908" duration="17241000" />
+      <workItem from="1754298058908" duration="21425000" />
     </task>
     <servers />
   </component>

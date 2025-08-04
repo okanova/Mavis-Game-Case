@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GameSelectButtonView : BaseButtonView
 {
-    private Scene selectScene;
+    private Scene selectScene = Scene.Menu;
 
     public Scene SelectScene
     {
@@ -14,5 +14,6 @@ public class GameSelectButtonView : BaseButtonView
     protected override void Click()
     {
         SceneLoader.LoadScene(selectScene);
+        GameManager.Instance.ChangeState(selectScene == Scene.Menu ? GameState.Exit : GameState.Playing);
     }
 }

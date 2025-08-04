@@ -5,7 +5,7 @@ public abstract class BaseButtonView : MonoBehaviour
 {
     protected Button button;
 
-    public virtual void Start()
+    protected virtual void Start()
     {
         button = GetComponent<Button>();
         button.onClick.RemoveAllListeners();

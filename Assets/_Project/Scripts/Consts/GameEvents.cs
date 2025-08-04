@@ -4,7 +4,8 @@ public enum GameEvents
     None = 0,
     Start = 1,
     End = 2,
-    Resume = 3,
-    Pause = 4,
-    Currency = 5
+    Play = 3,
+    Resume = 4,
+    Pause = 5,
+    Currency = 6
 }
