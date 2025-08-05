@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using _Project.Scripts.Core;
 using UnityEngine;
@@ -13,11 +14,17 @@ public class GameManager : Singleton<GameManager>
         // SaveManager.LoadAll();
         // SaveManager.SaveAll();
 
-        ChangeState(GameState.Booting); 
-        
-        SceneLoader.LoadScene(Scene.Menu);
-        ChangeState(GameState.Menu); 
+        StartCoroutine(LoadMenuRoutine());
     }
+    
+    private IEnumerator LoadMenuRoutine()
+    {
+        ChangeState(GameState.Booting);
+
+        yield return SceneLoader.LoadSceneRoutine(Scene.Menu); 
+        ChangeState(GameState.Menu);
+    }
+
 
     public void ChangeState(GameState newState)
     {
