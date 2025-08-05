@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4175be73b3510e4993d4321be66b244, type: 3}
+  m_Name: RunnerMapGeneratorSettings
+  m_EditorClassIdentifier: 
+  rateOfCreatingObstacle: 30
+  rateOfCreatingGold: 15
+  maxGoldCount: 5
+  scaleX: 1.75

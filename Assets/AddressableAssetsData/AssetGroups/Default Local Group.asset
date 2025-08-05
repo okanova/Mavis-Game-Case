@@ -15,13 +15,23 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 0261148735ba7f24eb16382830ef09f6
   m_SerializeEntries:
-  - m_GUID: 296c576226558e740bbbc5394f71dd2f
-    m_Address: Character
+  - m_GUID: 04d835832af9c0e42972ba070753134c
+    m_Address: Gold
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: fc140edb95be4d641aabc37245e6d613
-    m_Address: Plane
+  - m_GUID: 5df569799491fa1448e7683eb48d302d
+    m_Address: RoadMini
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8b7c70ad8e16b724ab08789374c2ba79
+    m_Address: Obstacle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d7174982eb7dad54093fe5a26b481811
+    m_Address: Road
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

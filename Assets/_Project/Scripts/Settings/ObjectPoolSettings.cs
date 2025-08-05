@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using UnityEngine.AddressableAssets;
 
 [CreateAssetMenu(fileName = "ObjectPoolSettings", menuName = "BaseSettings/Object Pool Settings")]
 public class ObjectPoolSettings : ScriptableObject
@@ -9,11 +10,15 @@ public class ObjectPoolSettings : ScriptableObject
     [System.Serializable]
     public class PoolObjectData
     {
+        public bool addressableTick = false;
+        public Scene scene;
         public string typeName;
+        public AssetReferenceGameObject prefabRef; 
         public GameObject prefab;
         public int initialSize = 10;
         public int maxSize = 50;
         public bool expandable = true;
+        public float autoReturnTime = 0f;
     }
 
     public List<PoolObjectData> poolObjects = new List<PoolObjectData>();

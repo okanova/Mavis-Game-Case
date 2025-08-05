@@ -6,16 +6,25 @@
   <component name="ChangeListManager">
     <list default="true" id="867cf1c9-9a83-4018-bc17-19da8972c51c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Mavis Game Case/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mavis Game Case/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Games/Runner/Prefabs/Cube.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Games/Runner/Prefabs/Cube.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Games/Runner/Prefabs/Sphere.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Games/Runner/Prefabs/Sphere.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Games/Runner/Scripts/Controller/RunnerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Games/Runner/Scripts/Controller/RunnerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Resources/GameEventSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Resources/GameEventSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Resources/ObjectPoolSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Resources/ObjectPoolSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/Boot.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Boot.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/Match3D.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Match3D.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/Runner.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Runner.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Consts/GameEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Consts/GameEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Consts/PoolObjectType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Consts/PoolObjectType.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/SceneLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/SceneLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/ObjectPoolManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Core/ObjectPoolManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Settings/ObjectPoolSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Settings/ObjectPoolSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +41,7 @@
     <setting file="file://$PROJECT_DIR$/../../Fourward/SiegeCastle/Assets/_GAME_/Scripts/Events/StringArgs.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Fourward/SiegeCastle/Assets/_GAME_/Scripts/Events/Vector3Args.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Fourward/SiegeCastle/Assets/_GAME_/Scripts/Managers/SystemManagers/EventManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Games/Runner/Scripts/Settings/RunnerMapGeneratorSettings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Consts/AudioEvents.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Consts/Currencies.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Consts/GameEvents.cs" root0="FORCE_HIGHLIGHTING" />
@@ -56,6 +66,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Settings/GameEventSettings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Settings/ObjectPoolSettings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Tests/InputTest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Tests/ObjectPoolTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/UI/Buttons/BaseButtonView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/UI/Buttons/GameSelectButtonView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/UI/Panels/GameSelectPanel.cs" root0="FORCE_HIGHLIGHTING" />
@@ -133,7 +144,7 @@
       <updated>1754298037916</updated>
       <workItem from="1754298040699" duration="10000" />
       <workItem from="1754298058908" duration="22048000" />
-      <workItem from="1754385825932" duration="5767000" />
+      <workItem from="1754385825932" duration="18161000" />
     </task>
     <servers />
   </component>

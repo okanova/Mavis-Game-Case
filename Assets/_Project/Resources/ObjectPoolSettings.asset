@@ -12,4 +12,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4304862fffa97d4f9d3e9be85da0b4a, type: 3}
   m_Name: ObjectPoolSettings
   m_EditorClassIdentifier: 
-  poolObjects: []
+  poolObjects:
+  - addressableTick: 1
+    scene: 2
+    typeName: Road
+    prefabRef:
+      m_AssetGUID: d7174982eb7dad54093fe5a26b481811
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    prefab: {fileID: 0}
+    initialSize: 2
+    maxSize: 4
+    expandable: 1
+    autoReturnTime: 10
+  - addressableTick: 1
+    scene: 2
+    typeName: Gold
+    prefabRef:
+      m_AssetGUID: 04d835832af9c0e42972ba070753134c
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    prefab: {fileID: 0}
+    initialSize: 100
+    maxSize: 200
+    expandable: 1
+    autoReturnTime: 10
+  - addressableTick: 1
+    scene: 2
+    typeName: Obstacle
+    prefabRef:
+      m_AssetGUID: 8b7c70ad8e16b724ab08789374c2ba79
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    prefab: {fileID: 0}
+    initialSize: 100
+    maxSize: 200
+    expandable: 1
+    autoReturnTime: 10

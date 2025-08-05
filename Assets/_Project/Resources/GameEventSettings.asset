@@ -16,6 +16,5 @@ MonoBehaviour:
   - Start
   - End
   - Play
-  - Resume
   - Pause
   - Currency

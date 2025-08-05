@@ -1,137 +1,228 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
-public static class ObjectPoolManager
+namespace _Project.Scripts.Core
 {
-    private class Pool
+    public static class ObjectPoolManager
     {
-        public Queue<GameObject> availableObjects = new();
-        public GameObject prefab;
-        public int maxSize;
-        public bool expandable;
-        public int createdCount;
-
-        public Pool(GameObject prefab, int initialSize, int maxSize, bool expandable)
+        private class Pool
         {
-            this.prefab = prefab;
-            this.maxSize = maxSize;
-            this.expandable = expandable;
-            this.createdCount = 0;
+            public Queue<GameObject> availableObjects = new();
+            public GameObject prefab;
+            public int maxSize;
+            public bool expandable;
+            public int createdCount;
+            public float autoReleaseTime;
 
-            for (int i = 0; i < initialSize; i++)
+            // Aktif auto-return coroutine takip etmek istersen:
+            private readonly HashSet<GameObject> activeAutoReturns = new();
+
+            public Pool(GameObject prefab, int initialSize, int maxSize, bool expandable, float autoReleaseTime)
             {
-                GameObject obj = Object.Instantiate(prefab);
+                this.prefab = prefab;
+                this.maxSize = maxSize;
+                this.expandable = expandable;
+                this.autoReleaseTime = autoReleaseTime;
+                this.createdCount = 0;
+
+                for (int i = 0; i < initialSize; i++)
+                {
+                    GameObject obj = Object.Instantiate(prefab);
+                    obj.SetActive(false);
+                    availableObjects.Enqueue(obj);
+                    createdCount++;
+                }
+            }
+
+            public GameObject Get()
+            {
+                GameObject obj;
+                if (availableObjects.Count > 0)
+                {
+                    obj = availableObjects.Dequeue();
+                }
+                else if (expandable && createdCount < maxSize)
+                {
+                    obj = Object.Instantiate(prefab);
+                    createdCount++;
+                }
+                else if (createdCount < maxSize)
+                {
+                    obj = Object.Instantiate(prefab);
+                    createdCount++;
+                }
+                else
+                {
+                    Debug.LogWarning($"[Pool] Kapasite dolu: {prefab.name}");
+                    return null;
+                }
+
+                obj.SetActive(true);
+
+                if (autoReleaseTime > 0)
+                {
+                    if (!activeAutoReturns.Contains(obj))
+                    {
+                        activeAutoReturns.Add(obj);
+                        GameManager.Instance.StartCoroutine(AutoReturnRoutine(obj, autoReleaseTime));
+                    }
+                }
+
+                return obj;
+            }
+
+            public void Return(GameObject obj)
+            {
                 obj.SetActive(false);
                 availableObjects.Enqueue(obj);
-                createdCount++;
+                activeAutoReturns.Remove(obj);
+            }
+
+            private IEnumerator AutoReturnRoutine(GameObject obj, float delay)
+            {
+                float timer = delay;
+            
+                while (timer > 0f)
+                {
+                    if (GameManager.Instance.CurrentState == GameState.Resuming)
+                    {
+                        timer -= Time.deltaTime;
+                    }
+
+                    yield return null;
+                }
+            
+                if (!obj.activeInHierarchy)
+                {
+                    activeAutoReturns.Remove(obj);
+                    yield break;
+                }
+            
+                obj.SetActive(false);
+                availableObjects.Enqueue(obj);
+                Debug.Log($"[AutoReturn] {obj.name} otomatik geri döndü.");
+
+                activeAutoReturns.Remove(obj);
             }
         }
 
-        public GameObject Get()
+        private static Dictionary<PoolObjectType, Pool> pools = new();
+        private static ObjectPoolSettings settings;
+        private static bool initialized = false;
+
+        public static void InitializePools()
         {
-            if (availableObjects.Count > 0)
+            Init();
+        }
+
+        private static void Init()
+        {
+            if (initialized) return;
+            initialized = true;
+
+            settings = Resources.Load<ObjectPoolSettings>("ObjectPoolSettings");
+            if (settings == null)
             {
-                GameObject obj = availableObjects.Dequeue();
-                obj.SetActive(true);
-                return obj;
+                Debug.LogError("ObjectPoolSettings bulunamadı! Assets/Resources/ObjectPoolSettings.asset yoluna bak.");
+                return;
             }
-            else if (expandable && createdCount < maxSize)
+
+            foreach (var data in settings.poolObjects)
             {
-                GameObject obj = Object.Instantiate(prefab);
-                createdCount++;
-                obj.SetActive(true);
-                return obj;
+                if (!System.Enum.TryParse<PoolObjectType>(data.typeName, out var type)) continue;
+
+                if (!data.addressableTick && data.prefab != null)
+                {
+                    pools[type] = new Pool(data.prefab, data.initialSize, data.maxSize, data.expandable, data.autoReturnTime);
+                }
             }
-            else if (createdCount < maxSize)
+        }
+
+        public static GameObject GetObject(PoolObjectType type)
+        {
+            Init();
+
+            if (pools.TryGetValue(type, out var pool))
             {
-                // Expandable false olsa da maxSize'a kadar üretim yapılabilir.
-                GameObject obj = Object.Instantiate(prefab);
-                createdCount++;
-                obj.SetActive(true);
-                return obj;
+                return pool.Get();
             }
             else
             {
+                Debug.LogError($"'{type}' için pool bulunamadı. Sahne yüklendi mi? Prefab doğru yüklendi mi?");
                 return null;
             }
         }
 
-        public void Return(GameObject obj)
+        public static void ReturnObject(PoolObjectType type, GameObject obj)
         {
-            obj.SetActive(false);
-            availableObjects.Enqueue(obj);
-        }
-    }
+            Init();
 
-    private static Dictionary<PoolObjectType, Pool> pools = new();
-
-    private static ObjectPoolSettings settings;
-
-    private static bool initialized = false;
-
-    private static void Init()
-    {
-        if (initialized) return;
-        initialized = true;
-
-        settings = Resources.Load<ObjectPoolSettings>("ObjectPoolSettings");
-        if (settings == null)
-        {
-            Debug.LogError("ObjectPoolSettings asset bulunamadı! Assets/Resources/ObjectPoolSettings.asset dosyasını oluşturun.");
-            return;
-        }
-
-        foreach (var poolData in settings.poolObjects)
-        {
-            if (System.Enum.TryParse<PoolObjectType>(poolData.typeName, out var type))
+            if (pools.TryGetValue(type, out var pool))
             {
-                pools[type] = new Pool(poolData.prefab, poolData.initialSize, poolData.maxSize, poolData.expandable);
+                pool.Return(obj);
             }
             else
             {
-                Debug.LogWarning($"PoolObjectType enum'da {poolData.typeName} bulunamadı!");
+                Debug.LogWarning($"[Pool] '{type}' için pool bulunamadı. Objeyi yok ediyorum.");
+                Object.Destroy(obj);
             }
         }
-    }
 
-    // Oyun başında manuel çağrılması önerilir.
-    public static void InitializePools()
-    {
-        Init();
-    }
-
-    public static GameObject GetObject(PoolObjectType type)
-    {
-        Init();
-
-        if (pools.TryGetValue(type, out var pool))
+        public static bool HasPool(PoolObjectType type)
         {
-            GameObject obj = pool.Get();
-            if (obj == null)
+            return pools.ContainsKey(type);
+        }
+
+        public static void LoadAddressablePoolsForScene(Scene targetScene)
+        {
+            GameManager.Instance.StartCoroutine(LoadSceneSpecificPoolsRoutine(targetScene));
+        }
+
+        private static IEnumerator LoadSceneSpecificPoolsRoutine(Scene scene)
+        {
+            var keysToRemove = new List<PoolObjectType>();
+
+            foreach (var kvp in pools)
             {
-                Debug.LogWarning($"Havuzda yeterli nesne yok ve genişleme kapalı: {type}");
+                var objData = settings.poolObjects.Find(p => p.typeName == kvp.Key.ToString());
+                if (objData != null && objData.addressableTick && objData.scene != scene)
+                {
+                    keysToRemove.Add(kvp.Key);
+                }
             }
-            return obj;
-        }
-        else
-        {
-            Debug.LogWarning($"Havuz bulunamadı: {type}");
-            return null;
-        }
-    }
 
-    public static void ReturnObject(PoolObjectType type, GameObject obj)
-    {
-        Init();
+            foreach (var key in keysToRemove)
+            {
+                pools.Remove(key);
+            }
 
-        if (pools.TryGetValue(type, out var pool))
-        {
-            pool.Return(obj);
-        }
-        else
-        {
-            Debug.LogWarning($"Havuz bulunamadı: {type}");
-            Object.Destroy(obj);
+            foreach (var data in settings.poolObjects)
+            {
+                if (!data.addressableTick || data.scene != scene) continue;
+                if (!System.Enum.TryParse<PoolObjectType>(data.typeName, out var type)) continue;
+
+                if (data.prefabRef == null)
+                {
+                    Debug.LogError($"Addressable prefab reference null: {data.typeName}");
+                    continue;
+                }
+
+                var handle = data.prefabRef.LoadAssetAsync();
+                yield return handle;
+
+                if (handle.Status == AsyncOperationStatus.Succeeded)
+                {
+                    var prefab = handle.Result;
+                    pools[type] = new Pool(prefab, data.initialSize, data.maxSize, data.expandable, data.autoReturnTime);
+                    Debug.Log($"✅ Addressable prefab yüklendi: {data.typeName}");
+                }
+                else
+                {
+                    Debug.LogError($"❌ Addressable prefab yüklenemedi: {data.typeName}");
+                }
+            }
         }
     }
 }

@@ -50,7 +50,7 @@ public class GameManager : Singleton<GameManager>
     {
         { GameState.Playing, GameEvents.Start },
         { GameState.Paused, GameEvents.Pause },
-        { GameState.Resuming, GameEvents.Resume },
+        { GameState.Resuming, GameEvents.Play },
         { GameState.Win, GameEvents.Pause },
         { GameState.Lose, GameEvents.Pause },
         { GameState.GameOver, GameEvents.End },
