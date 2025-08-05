@@ -6,5 +6,7 @@ public enum GameEvents
     End = 2,
     Play = 3,
     Pause = 4,
-    Currency = 5
+    Currency = 5,
+    GenerateMap = 6,
+    Exit = 7
 }

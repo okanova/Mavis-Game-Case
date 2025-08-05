@@ -37,7 +37,7 @@ namespace _Project.Scripts.Core
                 if (PlayerPrefs.HasKey(savable.SaveKey))
                 {
                     string json = PlayerPrefs.GetString(savable.SaveKey);
-                    var dataType = savable.CaptureState().GetType();  // tipi öğren
+                    var dataType = savable.CaptureState().GetType(); 
                     var state = JsonUtility.FromJson(json, dataType);
                     savable.RestoreState(state);
                 }

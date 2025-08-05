@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4175be73b3510e4993d4321be66b244, type: 3}
   m_Name: RunnerMapGeneratorSettings
   m_EditorClassIdentifier: 
-  rateOfCreatingObstacle: 30
-  rateOfCreatingGold: 15
+  rateOfCreatingObstacle: 10
+  rateOfCreatingGold: 10
   maxGoldCount: 5
   scaleX: 1.75

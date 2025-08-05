@@ -22,12 +22,14 @@ public class RunnerController : MonoBehaviour, IMiniGame
     private void OnEnable()
     {
         Initialize();
-        EventManager.RegisterEvent(GameEvents.End, EndGame);
+        EventManager.RegisterEvent(GameEvents.Exit, EndGame);
+        EventManager.RegisterEvent(GameEvents.GenerateMap, SetNewPos);
     }
 
     private void OnDisable()
     {
-        EventManager.UnregisterEvent(GameEvents.End, EndGame);
+        EventManager.UnregisterEvent(GameEvents.Exit, EndGame);
+        EventManager.UnregisterEvent(GameEvents.GenerateMap, SetNewPos);
     }
 
     public string GameId { get; }
@@ -52,9 +54,15 @@ public class RunnerController : MonoBehaviour, IMiniGame
 
     public void StartGame()
     {
-        // PrefabManager.LoadAndSpawn("Character", Vector3.up);
-        GenerateMap(50);
+         PrefabManager.LoadAndSpawn("Player", Vector3.up);
+
+         GenerateMap(50);
         GenerateMap(100);
+    }
+
+    private void SetNewPos()
+    {
+        GenerateMap(_currentPosition + 50);
     }
 
     private void GenerateMap(int newPosition)
@@ -144,6 +152,6 @@ public class RunnerController : MonoBehaviour, IMiniGame
 
     public void EndGame()
     {
-        PrefabManager.Unload("Character");
+        PrefabManager.Unload("Player");
     }
 }
