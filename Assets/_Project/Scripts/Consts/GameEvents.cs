@@ -4,9 +4,13 @@ public enum GameEvents
     None = 0,
     Start = 1,
     End = 2,
-    Play = 3,
-    Pause = 4,
-    Currency = 5,
-    GenerateMap = 6,
-    Exit = 7
+    Win = 3,
+    Lose = 4,
+    Play = 5,
+    Pause = 6,
+    Currency = 7,
+    GenerateMap = 8,
+    Exit = 9,
+    ChooseFruit = 10,
+    CheckNest = 11
 }

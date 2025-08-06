@@ -38,25 +38,31 @@ namespace _Project.Scripts.Core
 
             public GameObject Get()
             {
-                GameObject obj;
-                if (availableObjects.Count > 0)
+                GameObject obj = null;
+
+                while (availableObjects.Count > 0)
                 {
                     obj = availableObjects.Dequeue();
+
+                    // Eğer obje Destroy edilmişse, geç
+                    if (obj == null)
+                        continue;
+
+                    break;
                 }
-                else if (expandable && createdCount < maxSize)
+
+                if (obj == null)
                 {
-                    obj = Object.Instantiate(prefab);
-                    createdCount++;
-                }
-                else if (createdCount < maxSize)
-                {
-                    obj = Object.Instantiate(prefab);
-                    createdCount++;
-                }
-                else
-                {
-                    Debug.LogWarning($"[Pool] Kapasite dolu: {prefab.name}");
-                    return null;
+                    if ((expandable || createdCount < maxSize) && prefab != null)
+                    {
+                        obj = Object.Instantiate(prefab);
+                        createdCount++;
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"[Pool] Kapasite dolu veya prefab null: {prefab?.name}");
+                        return null;
+                    }
                 }
 
                 obj.SetActive(true);
@@ -72,6 +78,7 @@ namespace _Project.Scripts.Core
 
                 return obj;
             }
+            
 
             public void Return(GameObject obj)
             {

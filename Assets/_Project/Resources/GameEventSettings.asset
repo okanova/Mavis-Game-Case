@@ -15,8 +15,12 @@ MonoBehaviour:
   eventNames:
   - Start
   - End
+  - Win
+  - Lose
   - Play
   - Pause
   - Currency
   - GenerateMap
   - Exit
+  - ChooseFruit
+  - CheckNest

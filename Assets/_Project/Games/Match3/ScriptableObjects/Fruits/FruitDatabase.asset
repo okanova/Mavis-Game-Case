@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1e1394a07f7d7e4f96a341f1e2cd7a5, type: 3}
+  m_Name: FruitDatabase
+  m_EditorClassIdentifier: 
+  fruits:
+  - {fileID: 11400000, guid: 3e8e145cedd014a40a247bcaaccddcc1, type: 2}
+  - {fileID: 11400000, guid: 43978b3505d3dcd4492c68344b635749, type: 2}
+  - {fileID: 11400000, guid: a57154499ced6ed4fb7d5fcaa3f2a509, type: 2}
+  - {fileID: 11400000, guid: a0042ad93ac9cf64aa0c5d5fecbffb14, type: 2}
+  - {fileID: 11400000, guid: 382f3aa8f718b024bb9c1866dfaa052f, type: 2}
+  - {fileID: 11400000, guid: 84ebadafea37b8a4199ccdcb28f7b111, type: 2}
+  spawnCount: 30
+  spawnRadius: 2.5
+  spawnDelay: 0.1
+  spawnPosition: {x: 0, y: 10, z: 0}

@@ -54,23 +54,26 @@ public class GameManager : Singleton<GameManager>
 
     private void PublishEventForState(GameState state)
     {
-        
-        if (stateEventMap.TryGetValue(state, out GameEvents gameEvent))
+        if (stateEventMap.TryGetValue(state, out var gameEvents))
         {
-            EventManager.InvokeEvent(gameEvent);
+            foreach (var gameEvent in gameEvents)
+            {
+                EventManager.InvokeEvent(gameEvent);
+            }
         }
     }
     
-    private static readonly Dictionary<GameState, GameEvents> stateEventMap = new()
+    private static readonly Dictionary<GameState, List<GameEvents>> stateEventMap = new()
     {
-        { GameState.Playing, GameEvents.Start },
-        { GameState.Paused, GameEvents.Pause },
-        { GameState.Resuming, GameEvents.Play },
-        { GameState.Win, GameEvents.End },
-        { GameState.Lose, GameEvents.End },
-        { GameState.GameOver, GameEvents.End },
-        { GameState.Exit, GameEvents.Exit },
+        { GameState.Playing, new List<GameEvents> { GameEvents.Start } },
+        { GameState.Paused, new List<GameEvents> { GameEvents.Pause } },
+        { GameState.Resuming, new List<GameEvents> { GameEvents.Play } },
+        { GameState.Win, new List<GameEvents> { GameEvents.End, GameEvents.Win } },
+        { GameState.Lose, new List<GameEvents> { GameEvents.End, GameEvents.Lose } },
+        { GameState.GameOver, new List<GameEvents> { GameEvents.End } },
+        { GameState.Exit, new List<GameEvents> { GameEvents.Exit } },
     };
+
     
     private void SetGold(CurrencyArgs args)
     {

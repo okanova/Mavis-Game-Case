@@ -23,8 +23,8 @@ MonoBehaviour:
       m_SubObjectType: 
       m_EditorAssetChanged: 0
     prefab: {fileID: 0}
-    initialSize: 5
-    maxSize: 10
+    initialSize: 2
+    maxSize: 4
     expandable: 1
     autoReturnTime: 10
   - addressableTick: 1
@@ -37,8 +37,8 @@ MonoBehaviour:
       m_SubObjectType: 
       m_EditorAssetChanged: 0
     prefab: {fileID: 0}
-    initialSize: 100
-    maxSize: 200
+    initialSize: 0
+    maxSize: 0
     expandable: 1
     autoReturnTime: 10
   - addressableTick: 1
@@ -51,7 +51,91 @@ MonoBehaviour:
       m_SubObjectType: 
       m_EditorAssetChanged: 0
     prefab: {fileID: 0}
-    initialSize: 100
-    maxSize: 200
+    initialSize: 0
+    maxSize: 0
     expandable: 1
     autoReturnTime: 10
+  - addressableTick: 1
+    scene: 1
+    typeName: RedApple
+    prefabRef:
+      m_AssetGUID: fcd656c124cd8624ba602dcd2ea29029
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    prefab: {fileID: 0}
+    initialSize: 9
+    maxSize: 9
+    expandable: 1
+    autoReturnTime: 0
+  - addressableTick: 1
+    scene: 1
+    typeName: GreenApple
+    prefabRef:
+      m_AssetGUID: 7c0d69f31bf6d4e4d8dfcad23d3e1264
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+    prefab: {fileID: 0}
+    initialSize: 9
+    maxSize: 9
+    expandable: 1
+    autoReturnTime: 0
+  - addressableTick: 1
+    scene: 1
+    typeName: Pear
+    prefabRef:
+      m_AssetGUID: 33b02c7003b818647bc12b0a70fb75fa
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+    prefab: {fileID: 0}
+    initialSize: 9
+    maxSize: 9
+    expandable: 1
+    autoReturnTime: 0
+  - addressableTick: 1
+    scene: 1
+    typeName: Eggplant
+    prefabRef:
+      m_AssetGUID: af9ba060162ade84aa54bb3cfc3f073e
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+    prefab: {fileID: 0}
+    initialSize: 9
+    maxSize: 9
+    expandable: 1
+    autoReturnTime: 0
+  - addressableTick: 1
+    scene: 1
+    typeName: Potato
+    prefabRef:
+      m_AssetGUID: 78bcf76d8d6b25a4dac4d6d5ff011470
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+    prefab: {fileID: 0}
+    initialSize: 9
+    maxSize: 9
+    expandable: 1
+    autoReturnTime: 0
+  - addressableTick: 1
+    scene: 1
+    typeName: Tomato
+    prefabRef:
+      m_AssetGUID: 7dec744079e9d9342b3fcb578dec08ae
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+    prefab: {fileID: 0}
+    initialSize: 9
+    maxSize: 9
+    expandable: 1
+    autoReturnTime: 0

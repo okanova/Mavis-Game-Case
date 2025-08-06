@@ -37,7 +37,7 @@ public class RunnerController : MonoBehaviour, IMiniGame
     public void Initialize()
     {
         ObjectPoolManager.InitializePools();
-        StartCoroutine(DelayedStart());
+        StartCoroutine("DelayedStart");
     }
 
     private IEnumerator DelayedStart()
@@ -57,7 +57,7 @@ public class RunnerController : MonoBehaviour, IMiniGame
          PrefabManager.LoadAndSpawn("Player", Vector3.up);
 
          GenerateMap(50);
-        GenerateMap(100);
+         GenerateMap(100);
     }
 
     private void SetNewPos()
