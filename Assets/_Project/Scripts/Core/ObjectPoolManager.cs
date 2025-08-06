@@ -216,20 +216,31 @@ namespace _Project.Scripts.Core
                     continue;
                 }
 
-                var handle = data.prefabRef.LoadAssetAsync();
-                yield return handle;
-
-                if (handle.Status == AsyncOperationStatus.Succeeded)
+                // HATA KORUMASI: Zaten yüklenmişse tekrar yükleme
+                if (data.prefabRef.OperationHandle.IsValid() && data.prefabRef.OperationHandle.Status == AsyncOperationStatus.Succeeded)
                 {
-                    var prefab = handle.Result;
+                    GameObject prefab = data.prefabRef.OperationHandle.Result as GameObject;
                     pools[type] = new Pool(prefab, data.initialSize, data.maxSize, data.expandable, data.autoReturnTime);
-                    Debug.Log($"✅ Addressable prefab yüklendi: {data.typeName}");
+                    Debug.Log($"✅ [Cached] Addressable prefab yüklendi: {data.typeName}");
                 }
                 else
                 {
-                    Debug.LogError($"❌ Addressable prefab yüklenemedi: {data.typeName}");
+                    var handle = data.prefabRef.LoadAssetAsync<GameObject>();
+                    yield return handle;
+
+                    if (handle.Status == AsyncOperationStatus.Succeeded)
+                    {
+                        var prefab = handle.Result;
+                        pools[type] = new Pool(prefab, data.initialSize, data.maxSize, data.expandable, data.autoReturnTime);
+                        Debug.Log($"✅ Addressable prefab yüklendi: {data.typeName}");
+                    }
+                    else
+                    {
+                        Debug.LogError($"❌ Addressable prefab yüklenemedi: {data.typeName}");
+                    }
                 }
             }
         }
+
     }
 }
