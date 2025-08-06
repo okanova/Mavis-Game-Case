@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="867cf1c9-9a83-4018-bc17-19da8972c51c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Mavis Game Case/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mavis Game Case/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +22,7 @@
     <setting file="file://$PROJECT_DIR$/../../Fourward/SiegeCastle/Assets/_GAME_/Scripts/Events/StringArgs.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Fourward/SiegeCastle/Assets/_GAME_/Scripts/Events/Vector3Args.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Fourward/SiegeCastle/Assets/_GAME_/Scripts/Managers/SystemManagers/EventManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ReadMe!!!.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Games/Match3/Scripts/Controllers/FruitController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Games/Match3/Scripts/Controllers/Match3DController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Games/Match3/Scripts/Controllers/NestController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -140,7 +141,7 @@
       <workItem from="1754298040699" duration="10000" />
       <workItem from="1754298058908" duration="22048000" />
       <workItem from="1754385825932" duration="23676000" />
-      <workItem from="1754468222456" duration="15181000" />
+      <workItem from="1754468222456" duration="16378000" />
     </task>
     <servers />
   </component>
